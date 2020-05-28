@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import endpoint from './endpoint';
 
-const CharacterView = ({ character = {} }) => {
+const CharacterView = ({ match }) => {
+  const [character, setCharacter] = useState({});
+
+  useEffect(() => {
+    fetch(endpoint + '/' + match.params.id)
+      .then((response) => {
+        debugger;
+        return response.json();
+      })
+      .then((response) => {
+        debugger;
+        setCharacter(response);
+      })
+      .catch((error) => console.log(error));
+  }, [match.params.id]);
+
   console.log(character);
   return (
     <section className="CharacterView">
