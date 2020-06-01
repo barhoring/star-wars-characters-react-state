@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect, useCallback, Component } from 'react';
+import React, { useReducer, useEffect, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import isFunction from 'lodash/isFunction';
 
